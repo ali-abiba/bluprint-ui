@@ -75,7 +75,10 @@
 
 .grid {
     display: grid;
-    grid-template-rows: repeat(9, 10.55vh);
+    grid-template-rows: repeat(9, 10.95vh);
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 .cell {
@@ -97,5 +100,5 @@
 
 .center {
     backdrop-filter: blur(10px);
-    outline: #1a1a1a solid 8px;
+    border: #1a1a1a solid 8px;
 }

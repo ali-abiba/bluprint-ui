@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <div>
       <Layout>
-          <Navbar/>
+          {/*<Navbar/>*/}
           <ImageGrid/>
-          <InfoCard/>
+          {/*<InfoCard/>*/}
       </Layout>
     </div>
   )
