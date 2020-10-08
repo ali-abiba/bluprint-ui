@@ -129,7 +129,7 @@
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-duration: 2s;
-    animation-delay: 3s;
+    animation-delay: 4s;
     animation-fill-mode: forwards;
 }
 
@@ -139,7 +139,7 @@
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-duration: 2s;
-    animation-delay: 2s;
+    animation-delay: 3s;
     animation-fill-mode: forwards;
 }
 
@@ -149,6 +149,7 @@
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-duration: 2s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -158,7 +159,7 @@
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-duration: 2s;
-    animation-delay: .4s;
+    animation-delay: 1.4s;
     animation-fill-mode: forwards;
 }
 
@@ -168,6 +169,7 @@
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-duration: 2s;
+    animation-delay: 1.6s;
     animation-fill-mode: forwards;
 }
 
@@ -177,7 +179,7 @@
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-duration: 2s;
-    animation-delay: .75s;
+    animation-delay: 1.75s;
     animation-fill-mode: forwards;
 }
 
@@ -187,7 +189,7 @@
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-duration: 2s;
-    animation-delay: 1.3s;
+    animation-delay: 2.3s;
     animation-fill-mode: forwards;
 }
 
@@ -197,7 +199,7 @@
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-duration: 2s;
-    animation-delay: .5s;
+    animation-delay: 1.5s;
     animation-fill-mode: forwards;
 }
 
