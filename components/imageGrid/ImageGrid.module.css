@@ -3,7 +3,7 @@
         grid-template-columns: repeat(15, 1fr);
     }
     .center {
-        grid-area: 4 / 7 / 8 / 10
+        grid-area: 3 / 6 / 9 / 11
 
     }
 
@@ -24,7 +24,7 @@
     }
 
     .bottomRight {
-        grid-area: 4 / 11 / 10 / 16;
+        grid-area: 4 / 10 / 10 / 16;
     }
 
     .topMid {
@@ -101,4 +101,96 @@
 .center {
     backdrop-filter: blur(10px);
     border: #1a1a1a solid 8px;
+}
+
+.grid {
+    grid-template-columns: repeat(15, 1fr);
+}
+
+/** Animations **/
+.center {
+    opacity: 0;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+.mid {
+    opacity: 0;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.topLeft {
+    opacity: 0;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.bottomLeft {
+    opacity: 0;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-delay: .4s;
+    animation-fill-mode: forwards;
+}
+
+.bottomMid {
+    opacity: 0;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.bottomRight {
+    opacity: 0;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-delay: .75s;
+    animation-fill-mode: forwards;
+}
+
+.topMid {
+    opacity: 0;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-delay: 1.3s;
+    animation-fill-mode: forwards;
+}
+
+.topRight {
+    opacity: 0;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
