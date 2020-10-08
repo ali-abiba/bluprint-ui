@@ -96,6 +96,21 @@
 .logo {
     height: 100%;
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centerContent {
+    margin-left: auto;
+    margin-right: auto;
+    height: 80%;
+    width: 80%;
+}
+
+.center .text {
+    margin-top: 0px;
+    text-align: center;
+    width: inherit;
 }
 
 .center {

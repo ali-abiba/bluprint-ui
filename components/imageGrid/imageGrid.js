@@ -24,9 +24,13 @@ export default function ImageGrid(props) {
             <div className={`${styles.bottomRight} ${styles.cell}`} style={getCellStyle("bottom-right.png")}>
             </div>
             <div className={`${styles.center}`}>
+                <div className={styles.centerContent}>
                 <img src="/logo.png" className={styles.logo}/>
             </div>
-        </div>
+                <h2 className={styles.text}>Coming Soon</h2>
+
+            </div>
+        < /div>
     )
 }
 
