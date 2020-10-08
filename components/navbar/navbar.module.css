@@ -1,0 +1,49 @@
+.topnav a {
+    flex-grow: 1;
+    text-align: center;
+    transition: all .2s ease-in;
+
+    font-size: 1.5em;
+}
+
+.topnav a:hover {
+    background-color: #2E99F3 ;
+}
+.hamburger {
+    height: 15px;
+    width: 15px;
+}
+
+/* DESKTOP */
+@media screen and (min-width: 700px) {
+    .hamburger {
+        display: none;
+    }
+    .topnav {
+        width: 100vw;
+        height: 5vh;
+
+        font-family: 'Saira Condensed', sans-serif;
+
+        position:fixed;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.wrapper {
+    height: 5vh;
+}
+
+/* MOBILE */
+@media screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+
+    .topnav {
+        display: none;
+        flex-direction: column;
+    }
+}
