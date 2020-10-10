@@ -8,6 +8,13 @@
     border-radius: 10px;
 }
 
+.success {
+    width: 100%;
+    text-align: center;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+}
+
 .row {
     width: 100%;
     padding-left: 8px;
