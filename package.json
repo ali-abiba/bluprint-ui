@@ -9,6 +9,8 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.21",
+    "cors": "^2.8.5",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1"
