@@ -45,13 +45,10 @@ h1,h2,h3,h4 {
     margin-right: auto;
 }
 
-@media screen and (max-width: 500px) {
-    .emailForm {
-        width: 85%;
-    }
-}
-
 .emailForm h2 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0px;
     text-align: center;
 }
 
@@ -61,10 +58,20 @@ h1,h2,h3,h4 {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    max-width:230px;
-    max-height:500px;
+    max-width:270px;
+    max-height:600px;
     width: auto;
     height: auto;
+}
+
+@media screen and (max-width: 500px) {
+    .emailForm {
+        width: 85%;
+    }
+    .logo {
+        max-width:200px;
+        max-height:150px;
+    }
 }
 @keyframes fadeInOpacity {
     0% {

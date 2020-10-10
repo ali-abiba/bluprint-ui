@@ -17,8 +17,8 @@ export default function Home() {
                 <div className="overlay">
                     <div className="emailForm">
                         <img src="/logo.png" className="logo"/>
-                        <EmailForm/>
                         <h2>Coming Soon</h2>
+                        <EmailForm/>
                     </div>
                 </div>
             </Layout>
