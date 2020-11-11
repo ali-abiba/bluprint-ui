@@ -1,6 +1,6 @@
 import styles from './ImageGrid.module.css';
 
-export default function ImageGrid(props) {
+export default function ImageGrid() {
     function getCellStyle(imageName) {
         return {
             backgroundImage: `url('${imageName}')`,
