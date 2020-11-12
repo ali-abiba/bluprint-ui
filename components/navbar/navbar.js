@@ -13,7 +13,9 @@ export default function Navbar() {
                     <a>EVENTS</a>
                 </Link>
                 <a>COMMISSION</a>
-                <a href="https://www.jotform.com/form/203076801714046" target="_blank">ARTIST SIGNUP</a>
+                <Link href="/artist-signup">
+                    <a>ARTIST SIGNUP</a>
+                </Link>
                 <div className={styles.hamburger}><i className={`fas fa-bar`}></i></div>
             </div>
         </div>
