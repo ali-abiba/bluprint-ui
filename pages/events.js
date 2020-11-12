@@ -7,16 +7,11 @@ export default function Events() {
             <Layout>
                 <Navbar/>
                 <div className="eventsPlugin">
-                    <div id="fb-root"></div>
-                    <script async defer crossOrigin="anonymous"
-                            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0"
-                            nonce="DdAGVbJx"></script>
-                    <div className="fb-page" data-href="https://www.facebook.com/bluprint.art/" data-tabs="events"
-                         data-width="500" data-height="600" data-small-header="true" data-adapt-container-width="true"
-                         data-hide-cover="false" data-show-facepile="false">
-                        <blockquote cite="https://www.facebook.com/bluprint.art/" className="fb-xfbml-parse-ignore"><a
-                            href="https://www.facebook.com/bluprint.art/">Bluprintsocial</a></blockquote>
-                    </div>
+                    <iframe
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbluprint.art%2F&tabs=events&width=500&height=600&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+                        width="500" height="500" style={{'border':'none','overflow':'hidden', 'margin': '0'}} scrolling="no" frameBorder="0"
+                        allowFullScreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
             </Layout>
         </div>
