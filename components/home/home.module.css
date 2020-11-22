@@ -75,9 +75,12 @@
 
 .teamCard .row {
     height: 20%;
-    background-color: #00AED1;
+    background-color: #000000;
+    color: #ffffff;
     width: 100%;
-    border-bottom: #1a1a1a 10px solid;
+    border-top: #111111 10px solid;
+    border-bottom: #111111 10px solid;
+    margin-bottom: 8px;
 
     background-position: center;
     background-size: cover;
