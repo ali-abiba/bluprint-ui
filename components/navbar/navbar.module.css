@@ -19,6 +19,7 @@
 .topnav a:hover {
     background-color: #00AED1 ;
 }
+
 .hamburger {
     height: 15px;
     width: 15px;
@@ -26,6 +27,10 @@
 
 .wrapper {
     height: 6vh;
+}
+
+.topnav {
+    z-index: 4;
 }
 
 /* DESKTOP */
@@ -40,7 +45,7 @@
         font-family: 'Saira Condensed', sans-serif;
         background-color: #000;
 
-        z-index: 1;
+        z-index: 5;
         position:fixed;
         top: 0;
         display: flex;

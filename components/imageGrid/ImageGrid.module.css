@@ -87,15 +87,20 @@
 }
 
 .cell {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    width:100%;
+    height:100%;
+    z-index: 1;
     outline: #1a1a1a 8px solid;
+    background-color: #1a1a1a;
 }
 
 .cellImg {
     width: 100%;
+    height: 100%;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .logo {
@@ -121,6 +126,7 @@
 .center {
     backdrop-filter: blur(10px);
     border: #1a1a1a solid 8px;
+    z-index: 2;
 }
 
 /** Animations **/
@@ -134,7 +140,7 @@
     animation-fill-mode: forwards;
 }
 
-.mid {
+.midImg {
     opacity: 0;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
@@ -144,7 +150,10 @@
     animation-fill-mode: forwards;
 }
 
-.topLeft {
+.topLeftImg {
+    width:100%;
+    height:100%;
+
     opacity: 0;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
@@ -154,7 +163,7 @@
     animation-fill-mode: forwards;
 }
 
-.bottomLeft {
+.bottomLeftImg {
     opacity: 0;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
@@ -164,7 +173,7 @@
     animation-fill-mode: forwards;
 }
 
-.bottomMid {
+.bottomMidImg {
     opacity: 0;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
@@ -174,7 +183,7 @@
     animation-fill-mode: forwards;
 }
 
-.bottomRight {
+.bottomRightImg {
     opacity: 0;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
@@ -184,7 +193,7 @@
     animation-fill-mode: forwards;
 }
 
-.topMid {
+.topMidImg {
     opacity: 0;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
@@ -194,7 +203,7 @@
     animation-fill-mode: forwards;
 }
 
-.topRight {
+.topRightImg {
     opacity: 0;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;

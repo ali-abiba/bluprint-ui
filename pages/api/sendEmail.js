@@ -26,14 +26,14 @@ export default async (req,res) => {
             },
             body: JSON.stringify({
                 email: {
-                    to: 'nathan@bluprint.art',
-                    subject: 'New Artist Signup',
+                    to:  req.body.to,
+                    subject: req.body.subject,
                     text: message
                 }
             })
         }).then( (response ) => {
             if(response.ok) {
-                res.status(200).send();
+                res.status(200).send('OK');
             }else {
                 res.status(500).send(response);
             }
@@ -41,5 +41,7 @@ export default async (req,res) => {
             res.status(500).send(error);
         });
     }
+    res.status(200).send('OK');
+
 
 }

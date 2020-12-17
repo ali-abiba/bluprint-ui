@@ -8,11 +8,13 @@ export default function Navbar() {
                 <Link href="/">
                     <a>HOME</a>
                 </Link>
-                <a>GALLERY</a>
+                {/*<a>GALLERY</a>*/}
                 <Link href="/events">
                     <a>EVENTS</a>
                 </Link>
-                <a>COMMISSION</a>
+                <Link href="/commission">
+                    <a>COMMISSION</a>
+                </Link>
                 <Link href="/artist-signup">
                     <a>ARTIST SIGNUP</a>
                 </Link>

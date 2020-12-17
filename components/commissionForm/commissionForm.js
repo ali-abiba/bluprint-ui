@@ -1,16 +1,16 @@
+import React from "react";
 import Layout from "../layout/layout";
 import Navbar from "../navbar/navbar";
+import styles from "../artistForm/artistForm.module.css";
+import {ToastContainer, toast} from "react-toastify";
 
-import styles from "./artistForm.module.css";
-import React from "react";
-
-export default class ArtistForm extends React.Component {
+export default class CommissionForm extends React.Component {
 
     constructor(props) {
         super();
         this.state = {
-            name: '', email: '', phone: '', social: '',
-            mediums: [], artStyle: '', fetchError: ''
+            name: '', email: '', phone: '',
+            mediums: [], description: '', fetchError: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -18,49 +18,16 @@ export default class ArtistForm extends React.Component {
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
     }
 
-    submit() {
-        fetch('/api/sendEmail', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                to: 'nathan@bluprint.com',
-                subject: 'New Artist Signup:',
-                name: this.state.name,
-                email: this.state.email,
-                phone: this.state.phone,
-                social: this.state.social,
-                mediums: this.state.mediums,
-                artStyle: this.state.artStyle
-            })
-        }).then( (response ) => {
-            if(response.ok) {
-                console.log('Submitted')
-            }
-        }).catch((error) => {
-                console.log(error);
-        });
-    }
-
-    handleChange(e) {
-        this.setState({
-            ...this.state,
-            [e.target.name]: e.target.value
-        });
-    }
-
     handleCheckboxChange(e) {
         const mediums = this.state.mediums;
         let index;
 
-        if(e.target.name === 'other' && e.target.value){
+        if (e.target.name === 'other' && e.target.value) {
             const otherIndex = mediums.findIndex(el => el.includes('Other:'));
-            if(otherIndex < 0) {
+            if (otherIndex < 0) {
                 mediums.push('Other:' + e.target.value);
             } else {
-                mediums[otherIndex] ='Other: ' +  e.target.value;
+                mediums[otherIndex] = 'Other: ' + e.target.value;
             }
         } else {
             if (e.target.checked) {
@@ -71,6 +38,46 @@ export default class ArtistForm extends React.Component {
             }
         }
         this.setState({mediums: mediums});
+    }
+
+    submit(e) {
+        e.preventDefault();
+        fetch('/api/sendEmail', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                to: 'ali@bluprint.art',
+                subject: 'New Commission Request',
+                name: this.state.name,
+                email: this.state.email,
+                phone: this.state.phone,
+                mediums: this.state.mediums,
+                artStyle: this.state.description
+            })
+        }).then( (response ) => {
+            if(response.ok) {
+                toast.error('🦄 Wow so easy!', {
+                    position: "bottom-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }
+        }).catch((error) => {
+        });
+    }
+
+    handleChange(e) {
+        this.setState({
+            ...this.state,
+            [e.target.name]: e.target.value
+        });
     }
 
     render() {
@@ -86,10 +93,10 @@ export default class ArtistForm extends React.Component {
             <div>
                 <Layout>
                     <Navbar/>
-                    <div style={{backgroundImage: `url('artistForm/artistFormTop.jpg')`}} className={styles.topCard}>
-                        <h3>Artist Signup:</h3>
+                    <div style={{backgroundImage: `url('commissionForm/header.jpg')`}} className={styles.topCard}>
+                        <h3>Commission Quote Request:</h3>
                     </div>
-                    <div className={styles.artistForm}>
+                    <div className={styles.commissionForm}>
                         <form className={styles.form}>
                             <div className={styles.row}>
                                 <label>
@@ -110,18 +117,11 @@ export default class ArtistForm extends React.Component {
                                            name="email"/>
                                 </label>
                             </div>
-                            <div className={styles.row}>
-                                <label>
-                                    Social Media Handle
-                                    <input type="text" value={this.state.social} onChange={this.handleChange}
-                                           name="social"/>
-                                </label>
-                            </div>
 
                             <hr/>
 
                             <div className={`${styles.radioBox}`}>
-                                <h4>What are your art mediums?</h4>
+                                <h4>What some potential mediums for your piece?</h4>
                                 {checkBoxItems}
                                 <label className={styles.row}>
                                     If other, please describe:
@@ -131,14 +131,25 @@ export default class ArtistForm extends React.Component {
 
                             <hr/>
 
-                            <h4>Describe Your Art Style</h4>
+                            <h4>Describe Your Dream Piece</h4>
 
-                            <textarea value={this.state.style} onChange={this.handleChange}
-                                      name="artStyle"/>
+                            <textarea value={this.state.description} onChange={this.handleChange}
+                                      name="description"/>
                             <button onClick={this.submit}>Submit</button>
 
                         </form>
                     </div>
+                    <ToastContainer
+                        position="bottom-center"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                    />
                 </Layout>
             </div>
         )
