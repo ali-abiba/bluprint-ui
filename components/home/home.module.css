@@ -1,19 +1,66 @@
 /** SUMMARY SECTION **/
+.summary {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.summary h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 0;
+    padding: 50px;
+}
+
+.summary p {
+    margin-left: 4vw;
+    font-size: 2rem;
+    padding: 25px;
+}
+
+/** INFO SECTION **/
 .infoCard {
     display: flex;
-    /*height: 50vh;*/
+    flex-direction: column;
+    width: 100%;
+}
+
+.topCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
     width: 100%;
 }
 
 .cardSection {
-    width: 50%;
+    width: 100%;
+}
 
-    margin-right: 4vw;
+
+.artistImg {
+    width: 30vw;
+    height: auto;
+
+    margin-right: 6vw;
+}
+
+.cardContent {
+    width: 100%;
     margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.cardContent p {
+    width:65%;
 }
 
 .cardSection h2 {
     font-size: 4rem;
+    margin-left: 4vw;
+    margin-right: 4vw;
 }
 
 .cardSection p {
@@ -22,6 +69,11 @@
 
 .artistCard {
     text-align: right;
+}
+
+.artistCard .cardContent {
+    text-align: right;
+    float: right;
 }
 
 @media screen and (max-width: 420px) {
@@ -51,7 +103,7 @@
     font-size: 4.7rem;
     letter-spacing: 4px;
     margin-bottom: 25px;
-    margin-top: 0px;
+    margin-top: 0;
     border-bottom: #ffffff solid 3px;
 }
 
@@ -60,7 +112,7 @@
     letter-spacing: 4px;
     margin-bottom: 0;
     padding-left: 4vw;
-    margin-top: 0px;
+    margin-top: 0;
     border-bottom: #ffffff solid 3px;
 }
 
@@ -89,6 +141,19 @@
     transition: height 1s;
 }
 
+.portrait {
+    object-fit: cover;
+    width:15vw;
+    height:230px;
+
+    margin-left: 7vw;
+
+    border: #1a1a1a 5px solid;
+
+    opacity: 0;
+    transition: opacity ease-in .5s;
+}
+
 .teamCard .row:hover {
     height: 100%;
 }
@@ -97,12 +162,31 @@
     opacity: 1;
 }
 
+.teamCard .row:hover img {
+    opacity: 1;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.teamRow {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
 @media screen and (max-width: 420px) {
     .teamCard h2 {
         margin-left: 4vw;
         font-size: 3.4rem;
     }
 
-    .teamCard h3 { font-size: 2.7rem}
+    .teamCard h3 {
+        font-size: 2.7rem
+    }
 
 }

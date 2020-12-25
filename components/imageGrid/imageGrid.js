@@ -28,7 +28,7 @@ export default function ImageGrid() {
                 <div  style={getCellStyle("imageGrid/top-right.png")} className={`${styles.cellImg} ${styles.bottomLeftImg}`}></div>
             </div>
             <div className={`${styles.bottomRight} ${styles.cell}`}>
-                <div  style={getCellStyle("imageGrid/bottom-right.png")} className={`${styles.cellImg} ${styles.bottomLeftImg}`}></div>
+                <div style={getCellStyle("imageGrid/bottom-right.png")} className={`${styles.cellImg} ${styles.bottomLeftImg}`}></div>
             </div>
             <div className={`${styles.center}`}>
                 <img src="/logo.png" className={styles.logo}/>

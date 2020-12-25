@@ -2,6 +2,8 @@ import styles from "./home.module.css"
 import Navbar from "../navbar/navbar";
 import ImageGrid from "../imageGrid/imageGrid";
 import Layout from "../layout/layout";
+import Link from 'next/link';
+
 
 export default class Home extends React.Component {
 
@@ -22,38 +24,97 @@ export default class Home extends React.Component {
                     <div className="main">
                         <Navbar/>
                         <ImageGrid/>
+
+                        <section className={styles.summary} style={this.getCellStyle('./home/divider.png')}>
+                            <h2>What is Bluprint?</h2>
+                            <p>Bluprint is a personal design firm that operates on the idea of human connection made
+                                between clients and artists.
+                                Our unique approach to consulting, allows the client to be a part of the creative
+                                creation of their commission, while giving our artists
+                                direction and motivation.
+                            </p>
+                        </section>
+
+                        {/*<div className={styles.divider} style={this.getCellStyle('home/divider.png')}></div>*/}
+
                         <section className={styles.infoCard}>
-                            <div className={`${styles.cardSection} ${styles.customerCard}`}>
-                                <h2>Need a Piece Done?</h2>
-                                <p>We change your visual art needs from an <span className="highlight">idea</span> to
-                                    <span className="highlight"> reality</span>,
-                                    then connect with our extensive network of artists to fulfill your needs.</p>
+                            <div className={styles.topCard}>
+                                <div className={`${styles.cardSection} ${styles.customerCard}`}>
+                                    <h2>Need a Piece Done?</h2>
+                                    <div className={styles.cardContent}>
+                                        <p>We change your visual art needs from an <span
+                                            className="highlight">idea</span> to
+                                            <span className="highlight"> reality</span>,
+                                            then connect with our extensive network of artists to fulfill your needs.
+                                        </p>
+                                        <Link href="/commission">
+                                            <button>Lets get building!</button>
+                                        </Link>
+                                    </div>
+                                </div>
+                                <img src="./home/visual-art.png" className={styles.artistImg}/>
+
                             </div>
+                            <div className={styles.topCard}>
+                                <img src="./home/visual-art2.png" className={styles.artistImg}/>
                             <div className={`${styles.cardSection} ${styles.artistCard}`}>
                                 <h2>Are You an Artist?</h2>
-                                <p>Finding work as a young artist is challenging, we're here to help. Our unique method of
-                                    creating
-                                    removes the stress of <span className="highlight">finding</span> and <span className="highlight">maintaining </span>
-                                    clients and their commissions.</p>
+                                <div className={styles.cardContent}>
+                                    <p>Finding work as a young artist is challenging, we're here to help. Our unique
+                                        method of creating removes the stress of <span
+                                            className="highlight">finding</span> and <span
+                                            className="highlight">maintaining </span>
+                                        clients and their commissions.</p>
+                                    <Link href="/artist-signup">
+                                        <button>Lets get started!</button>
+                                    </Link>
+                                </div>
+                            </div>
                             </div>
                         </section>
 
                         <section className={styles.teamCard}>
                             <h2>Meet the team</h2>
                             <div className={`${styles.row}`}>
-                                <h3>Benjamin Baugham</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque eleifend sapien, a auctor sem porta ac. Morbi at metus ac dolor congue ultrices a vel dui. Mauris iaculis rutrum enim eu sodales. Proin rhoncus rhoncus nulla, vel viverra diam. Morbi tincidunt arcu elit, gravida venenatis magna eleifend vitae. Donec porta elit vel pulvinar ultricies. Phasellus vitae orci a nisl faucibus consequat. Mauris ornare interdum ante vel finibus.</p>
+                                <h3>Benjamin Baugham <span className="highlight">CEO</span></h3>
+                                <div className={styles.teamRow}>
+                                    <p>Ben Baugham, or Boy Blue, is the Chief Executive Officer and head Architect for
+                                        Bluprint. Ben's art journey began at childhood, and has
+                                        taken him to great heights since. Ben's passion for bringing people together
+                                        through art takes many forms. You might find him
+                                        at the Oregon District chalking and chatting it up, or performing live in front
+                                        of a corporate audience. Bluprint is his
+                                        ultimate expression of filling the gaps between people with art.</p>
+                                    <img src="./home/portrait/ben.png" className={styles.portrait}/>
+                                </div>
                             </div>
-                            <div onMouseOver={() => this.teamHover} className={`${styles.row}`}>
-                                <h3>Nathan Roberts</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque eleifend sapien, a auctor sem porta ac. Morbi at metus ac dolor congue ultrices a vel dui. Mauris iaculis rutrum enim eu sodales. Proin rhoncus rhoncus nulla, vel viverra diam. Morbi tincidunt arcu elit, gravida venenatis magna eleifend vitae. Donec porta elit vel pulvinar ultricies. Phasellus vitae orci a nisl faucibus consequat. Mauris ornare interdum ante vel finibus.</p>
+                            <div className={`${styles.row}`}>
+                                <h3>Nathan Roberts <span className="highlight">CMO</span></h3>
+                                <div className={styles.teamRow}>
+                                    <p>Nathan Roberts, or SuperZero, is the Chief Marketing Officer and artist liaison
+                                        for Bluprint. Nathan's extensive portfolio
+                                        is evidence enough of his commitment to the arts and his passion for creating.
+                                        His passion manifests itself through his role in Bluprint,
+                                        helping up and coming local artists further their career.</p>
+                                    <img src="./home/portrait/nathan.png" className={styles.portrait}/>
+                                </div>
                             </div>
-                            <div onMouseOver={() => this.teamHover} className={`${styles.row}`}>
-                                <h3>Ali Abiba</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque eleifend sapien, a auctor sem porta ac. Morbi at metus ac dolor congue ultrices a vel dui. Mauris iaculis rutrum enim eu sodales. Proin rhoncus rhoncus nulla, vel viverra diam. Morbi tincidunt arcu elit, gravida venenatis magna eleifend vitae. Donec porta elit vel pulvinar ultricies. Phasellus vitae orci a nisl faucibus consequat. Mauris ornare interdum ante vel finibus.</p>
+                            <div className={`${styles.row}`}>
+                                <h3>Ali Abiba <span className="highlight">COO</span></h3>
+                                <div className={styles.teamRow}>
+                                    <p>Ali Abiba is the Chief Operations Officer and runs the business side of things.
+                                        While not an artist, Ali deeply appreciates
+                                        and understands the value that visual arts has on society and culture. Ali's
+                                        expertise lies in helping artists get the business they need, and
+                                        clients the art they need.</p>
+                                    <img src="./home/portrait/ali.png" className={styles.portrait}/>
+                                </div>
                             </div>
                         </section>
 
+                        <section className={styles.socials}>
+
+                        </section>
 
                     </div>
                 </Layout>
