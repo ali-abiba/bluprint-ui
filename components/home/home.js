@@ -1,5 +1,5 @@
 import styles from "./home.module.css"
-import Navbar from "../navbar/navbar";
+import Navigation from "../navbar/navbar";
 import ImageGrid from "../imageGrid/imageGrid";
 import Layout from "../layout/layout";
 import Link from 'next/link';
@@ -22,7 +22,7 @@ export default class Home extends React.Component {
             <div>
                 <Layout>
                     <div className="main">
-                        <Navbar/>
+                        <Navigation/>
                         <ImageGrid/>
 
                         <section className={styles.summary} style={this.getCellStyle('./home/divider.png')}>
@@ -111,11 +111,6 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </section>
-
-                        <section className={styles.socials}>
-
-                        </section>
-
                     </div>
                 </Layout>
             </div>

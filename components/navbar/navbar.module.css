@@ -1,8 +1,3 @@
-.topnav a:link {
-    text-decoration: none;
-    color: #ffffff;
-}
-
 .topnav a:visited {
     text-decoration: none;
     color: #ffffff;
@@ -10,8 +5,8 @@
 
 .topnav a {
     flex-grow: 1;
-    text-align: center;
     transition: all .2s ease-in;
+    padding: 0px 25px 0px 25px;
 
     font-size: 1.5em;
 }
@@ -20,47 +15,29 @@
     background-color: #00AED1 ;
 }
 
-.hamburger {
-    height: 15px;
-    width: 15px;
+/*.hamburger {*/
+/*    height: 15px;*/
+/*    width: 15px;*/
+/*}*/
+
+/*.wrapper {*/
+/*    height: 6vh;*/
+/*}*/
+
+/*.topnav {*/
+/*    z-index: 4;*/
+/*}*/
+
+.Navbar-main {
+    background-color: #000000;
 }
 
-.wrapper {
-    height: 6vh;
+.navbar-toggler-icon {
+    color: #ffffff;
 }
+
 
 .topnav {
-    z-index: 4;
-}
-
-/* DESKTOP */
-@media screen and (min-width: 700px) {
-    .hamburger {
-        display: none;
-    }
-    .topnav {
-        width: 100vw;
-        height: 5vh;
-
-        font-family: 'Saira Condensed', sans-serif;
-        background-color: #000;
-
-        z-index: 5;
-        position:fixed;
-        top: 0;
-        display: flex;
-        flex-direction: row;
-    }
-}
-
-/* MOBILE */
-@media screen and (max-width: 700px) {
-    .hamburger {
-        display: block;
-    }
-
-    .topnav {
-        display: none;
-        flex-direction: column;
-    }
+    font-family: 'Saira Condensed', sans-serif;
+    background-color: #000;
 }
