@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 export default function Navigation() {
     return (
         <div>
-        <Navbar expand="lg" variant="dark" className={styles.topnav}>
+        <Navbar fixed="top" expand="lg" variant="dark" className={styles.topnav}>
             <Navbar.Brand href="#home"><img
                 src="/logo.png"
                 width="30"
