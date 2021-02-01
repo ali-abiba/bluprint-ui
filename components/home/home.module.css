@@ -28,6 +28,8 @@
     margin-left: 4vw;
     font-size: 2rem;
     padding: 25px;
+
+    width: 75%;
 }
 
 /** INFO SECTION **/
@@ -44,11 +46,13 @@
     justify-content: space-between;
     align-items: center;
 
+    margin-bottom: 50px;
+
     width: 100%;
 }
 
 .cardSection {
-    width: 100%;
+    width: 50%;
 }
 
 
@@ -66,7 +70,7 @@
 }
 
 .cardContent p {
-    width:65%;
+    width: 100%;
 }
 
 .cardSection h2 {
@@ -100,6 +104,43 @@
     .artistCard {
         text-align: left;
     }
+}
+
+/** SOCIALS SECTION **/
+.socials {
+    text-align: center;
+    margin-top: 25vh;
+    margin-bottom: 25px;
+}
+
+.socials h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 0;
+    padding: 50px;
+}
+
+.socialRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.socialRow img {
+    width: 10vw;
+    height: auto;
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+.instagram {
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    border-radius: 80px;
+}
+
+.facebook {
+    background:linear-gradient(120deg, #3b5998, #FFFFFF);
+    border-radius: 80px;
 }
 
 /** TEAM SECTION **/

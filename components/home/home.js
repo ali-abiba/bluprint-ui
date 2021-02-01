@@ -27,11 +27,10 @@ export default class Home extends React.Component {
 
                         <section className={styles.summary} style={this.getCellStyle('./home/divider.png')}>
                             <h2>What is Bluprint?</h2>
-                            <p>Bluprint is a personal design firm that operates on the idea of human connection made
-                                between clients and artists.
-                                Our unique approach to consulting, allows the client to be a part of the creative
-                                creation of their commission, while giving our artists
-                                direction and motivation.
+                            <p>Bluprint  is a personal  design  firm that operates on the  idea  of human
+                                connection made between clients  and  artists .  Our unique approach to
+                                consulting allows the  client  to be a part of the creation process for their
+                                commission, while giving our artists direction, motivation, and resources.
                             </p>
                         </section>
 
@@ -56,20 +55,20 @@ export default class Home extends React.Component {
 
                             </div>
                             <div className={styles.topCard}>
-                                <img src="./home/visual-art2.png" className={styles.artistImg}/>
-                            <div className={`${styles.cardSection} ${styles.artistCard}`}>
-                                <h2>Are You an Artist?</h2>
-                                <div className={styles.cardContent}>
-                                    <p>Finding work as a young artist is challenging, we're here to help. Our unique
-                                        method of creating removes the stress of <span
-                                            className="highlight">finding</span> and <span
-                                            className="highlight">maintaining </span>
-                                        clients and their commissions.</p>
-                                    <Link href="/artist-signup">
-                                        <button>Lets get started!</button>
-                                    </Link>
+                                <img src="./home/artist-art.png" className={styles.artistImg}/>
+                                <div className={`${styles.cardSection} ${styles.artistCard}`}>
+                                    <h2>Are You an Artist?</h2>
+                                    <div className={styles.cardContent}>
+                                        <p>Finding work as a young artist is challenging, we're here to help. Our unique
+                                            method of creating removes the stress of <span
+                                                className="highlight">finding</span> and <span
+                                                className="highlight">maintaining </span>
+                                            clients and their commissions.</p>
+                                        <Link href="/artist-signup">
+                                            <button>Lets get started!</button>
+                                        </Link>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </section>
 
@@ -111,6 +110,18 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </section>
+
+                        <section className={styles.socials}>
+                            <h2>Follow Us!</h2>
+                            <div className={styles.socialRow}>
+                                <a target="_blank" href="https://www.instagram.com/bluprint.art/"><img src="./home/instagram.png" className={styles.instagram}></img></a>
+                                <a target="_blank" href="https://www.facebook.com/bluprint.art"><img src="./home/facebooks.png" className={styles.facebook}></img></a>
+                            </div>
+                            <div className={styles.emailSignup}>
+
+                            </div>
+                        </section>
+
                     </div>
                 </Layout>
             </div>

@@ -3,7 +3,7 @@ import Navbar from "../components/navbar/navbar";
 
 export default function Events() {
     return (
-        <div>
+        <div className="eventsMain">
             <Layout>
                 <Navbar/>
                 <div className="eventsPlugin">

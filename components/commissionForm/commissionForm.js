@@ -93,9 +93,10 @@ export default class CommissionForm extends React.Component {
             <div>
                 <Layout>
                     <Navbar/>
-                    <div style={{backgroundImage: `url('commissionForm/header.jpg')`}} className={styles.topCard}>
-                        <h3>Commission Quote Request:</h3>
-                    </div>
+                    <img src="commissionForm/header.png" className={styles.topCard} />
+                    <h3 className={styles.title}>Commission Quote Request:</h3>
+                    <hr />
+
                     <div className={styles.commissionForm}>
                         <form className={styles.form}>
                             <div className={styles.row}>

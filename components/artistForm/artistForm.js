@@ -86,9 +86,9 @@ export default class ArtistForm extends React.Component {
             <div>
                 <Layout>
                     <Navbar/>
-                    <div style={{backgroundImage: `url('artistForm/artistFormTop.jpg')`}} className={styles.topCard}>
-                        <h3>Artist Signup:</h3>
-                    </div>
+                    <img src="artistForm/header.png" className={styles.topCard}/>
+                    <h3 className={styles.title}>Artist Signup:</h3>
+                    <hr />
                     <div className={styles.artistForm}>
                         <form className={styles.form}>
                             <div className={styles.row}>
