@@ -1,10 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #1a1a1a;
     margin: 0;
     padding: 0;
     color: #fff;
 
-    font-family: 'Saira Condensed', sans-serif;
+    font-family: 'Pathway Gothic One', sans-serif;
 
     width: 100%;
     height: 100%;
@@ -17,67 +22,43 @@ h1,h2,h3,h4 {
     font-weight: lighter;
 }
 
-.overlay {
+button {
+    background-color: #00AED1;
+    border: none;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1.1em;
+
+    border-radius: 10px;
+
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+
+}
+
+.highlight {
+    color: #00AED1;
+}
+
+.eventsPlugin {
+    width: 100%;
+
     display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    backdrop-filter: blur(10px);
-    position: fixed;
-    top:0;
-    left:0;
 
-    opacity: 0;
-    animation-name: fadeInOpacity;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 2s;
-    animation-delay: 5s;
-    animation-fill-mode: forwards;
+    justify-content: center;
+    align-items: center;
 }
 
-
-
-.emailForm {
-    width:50%;
-    height: 13vw;
-    margin-left: auto;
-    margin-right: auto;
+hr {
+    margin-top: 25px;
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(250, 250, 250, 0),rgba(250, 250, 250, 0.75), rgba(250, 250, 250, 0));
 }
 
-.emailForm h2 {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin: 0px;
-    text-align: center;
-}
-
-.logo {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    max-width:270px;
-    max-height:600px;
-    width: auto;
-    height: auto;
-}
-
-@media screen and (max-width: 500px) {
-    .emailForm {
-        width: 85%;
-    }
-    .logo {
-        max-width:200px;
-        max-height:150px;
-    }
-}
-@keyframes fadeInOpacity {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.eventsMain {
+    margin-top: 55px;
 }

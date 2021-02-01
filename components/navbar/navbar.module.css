@@ -1,49 +1,48 @@
+.topnav a:visited {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.topnav a:link {
+    text-decoration: none;
+}
+
 .topnav a {
+
     flex-grow: 1;
-    text-align: center;
     transition: all .2s ease-in;
+    padding: 0px 25px 0px 25px;
 
     font-size: 1.5em;
 }
 
 .topnav a:hover {
-    background-color: #2E99F3 ;
-}
-.hamburger {
-    height: 15px;
-    width: 15px;
+    background-color: #00AED1 ;
 }
 
-/* DESKTOP */
-@media screen and (min-width: 700px) {
-    .hamburger {
-        display: none;
-    }
-    .topnav {
-        width: 100vw;
-        height: 5vh;
+/*.hamburger {*/
+/*    height: 15px;*/
+/*    width: 15px;*/
+/*}*/
 
-        font-family: 'Saira Condensed', sans-serif;
+/*.wrapper {*/
+/*    height: 6vh;*/
+/*}*/
 
-        position:fixed;
-        top: 0;
-        display: flex;
-        flex-direction: row;
-    }
+/*.topnav {*/
+/*    z-index: 4;*/
+/*}*/
+
+.Navbar-main {
+    background-color: #000000;
 }
 
-.wrapper {
-    height: 5vh;
+.navbar-toggler-icon {
+    color: #ffffff;
 }
 
-/* MOBILE */
-@media screen and (max-width: 700px) {
-    .hamburger {
-        display: block;
-    }
 
-    .topnav {
-        display: none;
-        flex-direction: column;
-    }
+.topnav {
+    font-family: 'Saira Condensed', sans-serif;
+    background-color: #000;
 }

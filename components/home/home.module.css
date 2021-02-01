@@ -1,0 +1,245 @@
+/** SUMMARY SECTION **/
+.summary {
+    width: 100%;
+    margin-top: 75px;
+    margin-bottom: 125px;
+    padding-bottom: 150px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 700px) {
+    .summary {
+        background-position: bottom;
+        background-size: contain;
+        padding-bottom: 40px;
+    }
+}
+
+.summary h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 0;
+    padding: 50px;
+}
+
+.summary p {
+    margin-left: 4vw;
+    font-size: 2rem;
+    padding: 25px;
+
+    width: 75%;
+}
+
+/** INFO SECTION **/
+.infoCard {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 150px;
+    width: 100%;
+}
+
+.topCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 50px;
+
+    width: 100%;
+}
+
+.cardSection {
+    width: 50%;
+}
+
+
+.artistImg {
+    width: 30vw;
+    height: auto;
+
+    margin-right: 6vw;
+}
+
+.cardContent {
+    width: 100%;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.cardContent p {
+    width: 100%;
+}
+
+.cardSection h2 {
+    font-size: 4rem;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.cardSection p {
+    font-size: 2rem;
+}
+
+.artistCard {
+    text-align: right;
+}
+
+.artistCard .cardContent {
+    text-align: right;
+    float: right;
+}
+
+@media screen and (max-width: 420px) {
+    .infoCard {
+        flex-direction: column;
+    }
+
+    .infoCard .cardSection {
+        width: 80%;
+    }
+
+    .artistCard {
+        text-align: left;
+    }
+}
+
+/** SOCIALS SECTION **/
+.socials {
+    text-align: center;
+    margin-top: 25vh;
+    margin-bottom: 25px;
+}
+
+.socials h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 0;
+    padding: 50px;
+}
+
+.socialRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.socialRow img {
+    width: 10vw;
+    height: auto;
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+.instagram {
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    border-radius: 80px;
+}
+
+.facebook {
+    background:linear-gradient(120deg, #3b5998, #FFFFFF);
+    border-radius: 80px;
+}
+
+/** TEAM SECTION **/
+.teamCard {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10vh;
+}
+
+.teamCard h2 {
+    font-size: 4.7rem;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+    margin-top: 0;
+    border-bottom: #ffffff solid 3px;
+}
+
+.teamCard h3 {
+    font-size: 3rem;
+    letter-spacing: 4px;
+    margin-bottom: 0;
+    padding-left: 4vw;
+    margin-top: 0;
+    border-bottom: #ffffff solid 3px;
+}
+
+.teamCard p {
+    width: 65%;
+    font-size: 1.5rem;
+    padding-left: 2vw;
+    margin: 0;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.teamCard .row {
+    height: 20%;
+    background-color: #000000;
+    color: #ffffff;
+    width: 100%;
+    border-top: #111111 10px solid;
+    border-bottom: #111111 10px solid;
+    margin-bottom: 8px;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    transition: height 1s;
+}
+
+.portrait {
+    object-fit: cover;
+    width:15vw;
+    height:230px;
+
+    margin-left: 7vw;
+
+    border: #1a1a1a 5px solid;
+
+    opacity: 0;
+    transition: opacity ease-in .5s;
+}
+
+.teamCard .row:hover {
+    height: 100%;
+}
+
+.teamCard .row:hover p {
+    opacity: 1;
+}
+
+.teamCard .row:hover img {
+    opacity: 1;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.teamRow {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
+@media screen and (max-width: 420px) {
+    .teamCard h2 {
+        margin-left: 4vw;
+        font-size: 3.4rem;
+    }
+
+    .teamCard h3 {
+        font-size: 2.7rem
+    }
+
+}
