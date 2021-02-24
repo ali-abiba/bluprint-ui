@@ -7,6 +7,10 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @media screen and (max-width: 700px) {
@@ -24,11 +28,16 @@
     padding: 50px;
 }
 
-.summary p {
-    margin-left: 4vw;
+.summaryP {
     font-size: 2rem;
     padding: 25px;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
 
+.summaryP p {
+    margin: auto;
     width: 75%;
 }
 

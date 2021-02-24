@@ -27,11 +27,13 @@ export default class Home extends React.Component {
 
                         <section className={styles.summary} style={this.getCellStyle('./home/divider.png')}>
                             <h2>What is Bluprint?</h2>
-                            <p>Bluprint  is a personal  design  firm that operates on the  idea  of human
-                                connection made between clients  and  artists .  Our unique approach to
-                                consulting allows the  client  to be a part of the creation process for their
+                            <div className={styles.summaryP}>
+                            <p>Bluprint is a personal design firm that operates on the idea of human
+                                connection made between clients and artists. Our unique approach to
+                                consulting allows the client to be a part of the creation process for their
                                 commission, while giving our artists direction, motivation, and resources.
                             </p>
+                            </div>
                         </section>
 
                         {/*<div className={styles.divider} style={this.getCellStyle('home/divider.png')}></div>*/}
@@ -84,7 +86,7 @@ export default class Home extends React.Component {
                                         at the Oregon District chalking and chatting it up, or performing live in front
                                         of a corporate audience. Bluprint is his
                                         ultimate expression of filling the gaps between people with art.</p>
-                                    <img src="./home/portrait/ben.png" className={styles.portrait}/>
+                                    <img src="./home/portrait/ben.PNG" className={styles.portrait}/>
                                 </div>
                             </div>
                             <div className={`${styles.row}`}>
@@ -95,18 +97,18 @@ export default class Home extends React.Component {
                                         is evidence enough of his commitment to the arts and his passion for creating.
                                         His passion manifests itself through his role in Bluprint,
                                         helping up and coming local artists further their career.</p>
-                                    <img src="./home/portrait/nathan.png" className={styles.portrait}/>
+                                    <img src="./home/portrait/nathan.PNG" className={styles.portrait}/>
                                 </div>
                             </div>
                             <div className={`${styles.row}`}>
-                                <h3>Ali Abiba <span className="highlight">COO</span></h3>
+                                <h3>Ali Abiba <span className="highlight">CTO</span></h3>
                                 <div className={styles.teamRow}>
-                                    <p>Ali Abiba is the Chief Operations Officer and runs the business side of things.
+                                    <p>Ali Abiba is the Chief Techincal Officer and runs the business/tech side of things.
                                         While not an artist, Ali deeply appreciates
                                         and understands the value that visual arts has on society and culture. Ali's
                                         expertise lies in helping artists get the business they need, and
                                         clients the art they need.</p>
-                                    <img src="./home/portrait/ali.png" className={styles.portrait}/>
+                                    <img src="./home/portrait/ali.PNG" className={styles.portrait}/>
                                 </div>
                             </div>
                         </section>

@@ -122,7 +122,7 @@ export default class CommissionForm extends React.Component {
                             <hr/>
 
                             <div className={`${styles.radioBox}`}>
-                                <h4>What some potential mediums for your piece?</h4>
+                                <h4>What are some potential mediums for your piece?</h4>
                                 {checkBoxItems}
                                 <label className={styles.row}>
                                     If other, please describe:
