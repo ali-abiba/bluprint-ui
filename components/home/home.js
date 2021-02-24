@@ -27,11 +27,13 @@ export default class Home extends React.Component {
 
                         <section className={styles.summary} style={this.getCellStyle('./home/divider.png')}>
                             <h2>What is Bluprint?</h2>
-                            <p>Bluprint  is a personal  design  firm that operates on the  idea  of human
-                                connection made between clients  and  artists .  Our unique approach to
-                                consulting allows the  client  to be a part of the creation process for their
+                            <div className={styles.summaryP}>
+                            <p>Bluprint is a personal design firm that operates on the idea of human
+                                connection made between clients and artists. Our unique approach to
+                                consulting allows the client to be a part of the creation process for their
                                 commission, while giving our artists direction, motivation, and resources.
                             </p>
+                            </div>
                         </section>
 
                         {/*<div className={styles.divider} style={this.getCellStyle('home/divider.png')}></div>*/}
@@ -99,9 +101,9 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                             <div className={`${styles.row}`}>
-                                <h3>Ali Abiba <span className="highlight">COO</span></h3>
+                                <h3>Ali Abiba <span className="highlight">CTO</span></h3>
                                 <div className={styles.teamRow}>
-                                    <p>Ali Abiba is the Chief Operations Officer and runs the business side of things.
+                                    <p>Ali Abiba is the Chief Techincal Officer and runs the business/tech side of things.
                                         While not an artist, Ali deeply appreciates
                                         and understands the value that visual arts has on society and culture. Ali's
                                         expertise lies in helping artists get the business they need, and
