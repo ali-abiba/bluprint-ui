@@ -2,6 +2,9 @@
   "name": "bluprint-ui",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.14.1"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,7 +13,9 @@
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.21",
+    "@sanity/client": "^2.2.6",
     "cors": "^2.8.5",
+    "moment": "^2.29.1",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-bootstrap": "^1.4.0",

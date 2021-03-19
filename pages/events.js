@@ -1,19 +1,66 @@
 import Layout from "../components/layout/layout";
 import Navbar from "../components/navbar/navbar";
+import Event from "../components/event/event";
+import client from "../lib/sanity-config";
+import * as moment from 'moment';
 
-export default function Events() {
+export default function Events(props) {
+    let eventList = () => {
+        if(props.events.length > 0) {
+            return props.events.sort((a, b) => {
+                if (moment(a.date).isAfter(b.date)) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }).map((res, index) =>
+                <div className='eventCard'>
+                    <Event event={res} key={index}/>
+                </div>
+            );
+        } else {
+            return (
+                <div className='eventMissing'>
+                    <h2>No events right now, check back later!</h2>
+                </div>
+            );
+        }
+    };
+
     return (
-        <div className="eventsMain">
             <Layout>
                 <Navbar/>
-                <div className="eventsPlugin">
-                    <iframe
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbluprint.art%2F&tabs=events&width=500&height=600&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-                        width="500" height="500" style={{'border':'none','overflow':'hidden', 'margin': '0'}} scrolling="no" frameBorder="0"
-                        allowFullScreen="true"
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <div className='eventsMain'>
+                    <div>
+                        {eventList()}
+                    </div>
                 </div>
             </Layout>
-        </div>
     )
+}
+
+function formatDate(date) {
+    date = date.replace('T', ' ');
+    date = date.replace('z', '');
+    return date;
+}
+
+export async function getStaticProps(context) {
+    let data;
+    await client.fetch("*").then(res => {
+            data = res.map(val => {
+                val.date = formatDate(val.date);
+                return val;
+            });
+    });
+
+    if (!data) {
+        return {
+            notFound: true,
+        }
+    }
+
+    return {
+        props: { events : data }
+    }
 }
