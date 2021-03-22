@@ -42,35 +42,61 @@ export default class CommissionForm extends React.Component {
 
     submit(e) {
         e.preventDefault();
-        fetch('/api/sendEmail', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                to: 'ali@bluprint.art',
-                subject: 'New Commission Request',
-                name: this.state.name,
-                email: this.state.email,
-                phone: this.state.phone,
-                mediums: this.state.mediums,
-                artStyle: this.state.description
-            })
-        }).then( (response ) => {
-            if(response.ok) {
-                toast.error('🦄 Wow so easy!', {
-                    position: "bottom-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
+
+        let emailBody = {
+            to: ['ali@bluprint.art', 'nathan@bluprint.art', 'ben@bluprint.art'],
+            subject: 'New Commission Request',
+            name: this.state.name,
+            email: this.state.email,
+            phone: this.state.phone,
+            mediums: this.state.mediums,
+            artStyle: this.state.description
+        };
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LdUf4YaAAAAAAz4vfEjzyoFHXxjwZ_SLhl7OaBq', {action: 'submit'}).then(function(token) {
+                fetch('/api/sendEmail', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(emailBody)
+                }).then( (response ) => {
+                    if(response.ok) {
+                        toast.info('Submission successful! We will get back to you shortly!', {
+                            position: "bottom-center",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                        });
+                    } else {
+                        toast.error('There was an issue submitting. Please try again later.', {
+                            position: "bottom-center",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                        });
+                    }
+                }).catch((error) => {
+                    toast.error('There was an issue submitting. Please try again later.', {
+                        position: "bottom-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
                 });
-            }
-        }).catch((error) => {
+            });
         });
+
     }
 
     handleChange(e) {

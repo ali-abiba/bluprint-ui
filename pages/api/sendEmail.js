@@ -17,6 +17,8 @@ export default async (req,res) => {
         Social: ${req.body.social}\n
         Mediums: ${req.body.mediums.join(', ')}\n
         Art Style: ${req.body.artStyle}`;
+
+        console.log(`POSTING EMAIL REQUEST FROM ${message.email}`);
         fetch(`${process.env.mailHandleUrl}/mail/send-email`, {
             method: 'POST',
             headers: {
@@ -32,16 +34,11 @@ export default async (req,res) => {
                 }
             })
         }).then( (response ) => {
-            if(response.ok) {
                 res.status(200).send('OK');
-            }else {
-                res.status(500).send(response);
-            }
         }).catch((error) => {
+            console.error('ERROR SENDING EMAIL',error);
             res.status(500).send(error);
         });
     }
-    res.status(200).send('OK');
-
 
 }

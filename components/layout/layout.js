@@ -6,6 +6,7 @@ const Layout = (props) => {
             <Head>
                 <title>BluPrint Art</title>
                 <script src="https://kit.fontawesome.com/a5a13ba575.js" crossOrigin="anonymous"></script>
+                <script src="https://www.google.com/recaptcha/api.js?render=6LdUf4YaAAAAAAz4vfEjzyoFHXxjwZ_SLhl7OaBq"></script>
                 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pathway+Gothic+One&family=Saira+Condensed:wght@300&display=swap" rel="stylesheet"/>
                 <link
                     rel="stylesheet"

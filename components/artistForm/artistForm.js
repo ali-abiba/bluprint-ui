@@ -1,8 +1,8 @@
 import Layout from "../layout/layout";
 import Navbar from "../navbar/navbar";
-
 import styles from "./artistForm.module.css";
 import React from "react";
+import {ToastContainer, toast} from "react-toastify";
 
 export default class ArtistForm extends React.Component {
 
@@ -16,39 +16,6 @@ export default class ArtistForm extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.submit = this.submit.bind(this);
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
-    }
-
-    submit() {
-        fetch('/api/sendEmail', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                to: 'nathan@bluprint.com',
-                subject: 'New Artist Signup:',
-                name: this.state.name,
-                email: this.state.email,
-                phone: this.state.phone,
-                social: this.state.social,
-                mediums: this.state.mediums,
-                artStyle: this.state.artStyle
-            })
-        }).then( (response ) => {
-            if(response.ok) {
-                console.log('Submitted')
-            }
-        }).catch((error) => {
-                console.log(error);
-        });
-    }
-
-    handleChange(e) {
-        this.setState({
-            ...this.state,
-            [e.target.name]: e.target.value
-        });
     }
 
     handleCheckboxChange(e) {
@@ -73,6 +40,72 @@ export default class ArtistForm extends React.Component {
         this.setState({mediums: mediums});
     }
 
+    submit(e) {
+        e.preventDefault();
+
+        let emailBody = {
+            to: ['ali@bluprint.art', 'nathan@bluprint.art', 'ben@bluprint.art'],
+            subject: 'New Artist Signup:',
+            name: this.state.name,
+            email: this.state.email,
+            phone: this.state.phone,
+            social: this.state.social,
+            mediums: this.state.mediums,
+            artStyle: this.state.artStyle
+        }
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LdUf4YaAAAAAAz4vfEjzyoFHXxjwZ_SLhl7OaBq', {action: 'submit'}).then(function(token) {
+                fetch('/api/sendEmail', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(emailBody)
+                }).then( (response ) => {
+                    if(response.ok) {
+                        toast.info('Submission successful! We will get back to you shortly!', {
+                            position: "bottom-center",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                        });
+                    } else {
+                        toast.error('There was an issue submitting. Please try again later.', {
+                            position: "bottom-center",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                        });
+                    }
+                }).catch((error) => {
+                    toast.error('There was an issue submitting. Please try again later.', {
+                        position: "bottom-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
+                });
+            });
+        });
+    }
+
+    handleChange(e) {
+        this.setState({
+            ...this.state,
+            [e.target.name]: e.target.value
+        });
+    }
+
     render() {
         const checkBoxItems = ['Digital', 'Paint', 'Ink', '3D/Scuplture', 'Pencil/Charcoal'].map((val, index) => {
             return (
@@ -89,6 +122,7 @@ export default class ArtistForm extends React.Component {
                     <img src="artistForm/header.png" className={styles.topCard}/>
                     <h3 className={styles.title}>Artist Signup:</h3>
                     <hr />
+
                     <div className={styles.artistForm}>
                         <form className={styles.form}>
                             <div className={styles.row}>
@@ -139,6 +173,17 @@ export default class ArtistForm extends React.Component {
 
                         </form>
                     </div>
+                    <ToastContainer
+                        position="bottom-center"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                    />
                 </Layout>
             </div>
         )
