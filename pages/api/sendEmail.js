@@ -18,7 +18,7 @@ export default async (req,res) => {
         Mediums: ${req.body.mediums.join(', ')}\n
         Art Style: ${req.body.artStyle}`;
 
-        console.log(`POSTING EMAIL REQUEST FROM ${message.email}`);
+        console.log(`POSTING EMAIL REQUEST FROM ${req.body.email}`);
         fetch(`${process.env.mailHandleUrl}/mail/send-email`, {
             method: 'POST',
             headers: {
